@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Agriculture green palette — OKLCH L C H */
+    --background: 0.97 0.015 155;
+    --foreground: 0.18 0.06 160;
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.06 160;
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.06 160;
+
+    /* primary = dark green #1F5A43 */
+    --primary: 0.35 0.09 160;
+    --primary-foreground: 0.98 0 0;
+
+    /* secondary = mint tint */
+    --secondary: 0.93 0.025 155;
+    --secondary-foreground: 0.35 0.09 160;
+
+    --muted: 0.93 0.015 155;
+    --muted-foreground: 0.5 0.03 155;
+
+    /* accent = accent green #2E7D5B */
+    --accent: 0.47 0.11 158;
+    --accent-foreground: 0.98 0 0;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    --border: 0.88 0.02 155;
+    --input: 0.88 0.02 155;
+    --ring: 0.47 0.11 158;
+
+    --chart-1: 0.47 0.11 158;
+    --chart-2: 0.6 0.12 155;
+    --chart-3: 0.35 0.09 160;
+    --chart-4: 0.7 0.14 150;
+    --chart-5: 0.55 0.1 165;
+
+    --sidebar: 0.35 0.09 160;
+    --sidebar-foreground: 0.98 0 0;
+    --sidebar-primary: 0.47 0.11 158;
+    --sidebar-primary-foreground: 0.98 0 0;
+    --sidebar-accent: 0.4 0.09 158;
+    --sidebar-accent-foreground: 0.98 0 0;
+    --sidebar-border: 0.4 0.07 158;
+    --sidebar-ring: 0.47 0.11 158;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .chat-msg-enter {
+    animation: chatMsgEnter 0.3s ease-out forwards;
+  }
+  @keyframes chatMsgEnter {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .hero-overlay {
+    background: linear-gradient(
+      135deg,
+      oklch(0.18 0.08 160 / 0.8) 0%,
+      oklch(0.3 0.1 158 / 0.55) 100%
+    );
+  }
+}
